@@ -1,0 +1,19 @@
+.container{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;  
+  background-color: transparent;
+}
+
+
+
+
+.inner-div{ 
+  background: #455347;
+  height: 20%;
+  width: 40%;
+  border-radius: 30px;
+  align-self: center;
+ box-shadow: 15px 15px 15px 5px #455347;
+}
