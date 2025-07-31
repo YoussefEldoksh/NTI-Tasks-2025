@@ -36,45 +36,35 @@ const server = http.createServer((req,res)=>
         res.write('Hello world from nodejs...');
         res.end();
     }
-    else if (req.url === '/posts') {
+    else if (req.url === '/home') {
 
                 res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.write(displayPostLists());
+                res.write(`
+    <div class="root" style="width: 100%; text-align: center;">
+        <h2>Home</h2>
+    </div>
+                    `);
                 res.end();
 
         }
-    else if(req.url ==='/posts/add-post')
+    else if(req.url ==='/about')
     {
                     res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.write(`
-
-<div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">Username</span>
-  <input type="text" class="form-control" aria-describedby="addon-wrapping">
-</div>
-
-
-
-<div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">Post Title</span>
-  <input type="text" class="form-control" aria-describedby="addon-wrapping">
-</div>
-
-
-<div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">Post Content</span>
-  <input type="text" class="form-control" aria-describedby="addon-wrapping">
-</div>
-
-
-          
+    <div class="root" style="width: 100%; text-align: center;">
+        <h2>About Page</h2>
+    </div>
                     `);
                 res.end();
     }
 
+
     else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.write('404 Not Found');
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.write(`    <div class="root" style="width: 100%; text-align: center;">
+        <h2>404 Not Found</h2>
+    </div>
+             `);
             res.end();
         }
 
